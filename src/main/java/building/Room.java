@@ -36,7 +36,6 @@ public class Room {
             throw new IlluminanceTooMuchException("Maximal brightness is exceeded");
         } else {
             lamps.add(lighting);
-            //return calcLampsBrigthness();
         }
     }
 
@@ -74,7 +73,7 @@ public class Room {
 
     //метод добавления мебели в помещение и обработки исключения превышения занимаемой площади
     public void addFurniture(Furniture furniture) throws SpaceUsageTooMuchException {
-        if ((calcFurnitureSquare() > roomSquare * 0.7)) {
+        if ((calcFurnitureSquare() > (roomSquare*0.7))) {
             logger.error("Furniture occupies more than 70% of room!");
             throw new SpaceUsageTooMuchException("Furniture occupies more than 70% of room!");
         } else {
@@ -124,6 +123,5 @@ public class Room {
     public double getRoomSquare() {
         return roomSquare;
     }
-
 
 }

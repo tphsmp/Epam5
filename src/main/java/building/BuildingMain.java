@@ -22,8 +22,10 @@ public class BuildingMain {
         r1.addLighting(new Lighting("lumen", 50));
         r1.addLighting(new Lighting("lumen", 70));
 
+        r1.addFurniture(new Furniture("Диван", 29.5d));
+
         //добавлем экземпляр помещения 2
-        Room r2 = new Room("room2", 24.5, 3);
+        Room r2 = new Room("room2", 24.5, 2);
 
         //добавляем помещение 2 в лист
         b1.addRoom(r2);
