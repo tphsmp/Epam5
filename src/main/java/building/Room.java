@@ -39,7 +39,7 @@ public class Room {
         }
     }
 
-    //    //метод расчета яркости ламп для передачи в интерфейс расчета общей яркости
+    //метод расчета яркости ламп для передачи в интерфейс расчета общей яркости
     public int calcLampsBrigthness() {
         int lampsLight = 0;
         for (Lighting lamp : lamps) {
@@ -73,7 +73,7 @@ public class Room {
 
     //метод добавления мебели в помещение и обработки исключения превышения занимаемой площади
     public void addFurniture(Furniture furniture) throws SpaceUsageTooMuchException {
-        if ((calcFurnitureSquare() > (roomSquare*0.7))) {
+        if (calcFurnitureSquare() >= (roomSquare*0.7)) {
             logger.error("Furniture occupies more than 70% of room!");
             throw new SpaceUsageTooMuchException("Furniture occupies more than 70% of room!");
         } else {
