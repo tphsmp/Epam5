@@ -10,14 +10,14 @@ import java.util.List;
 
 public class Room {
 
-    //создаем логгер
-    private Logger logger = LogManager.getLogger();
-
     //объявляем общие свойства класса Room
     final int LK = 700;
     private String name;
     private double roomSquare;
     private int windows;
+
+    //создаем логгер
+    private Logger logger = LogManager.getLogger();
 
     //конструктор класса Room
     public Room(String name, double roomSquare, int windows) {

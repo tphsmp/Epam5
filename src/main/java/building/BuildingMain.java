@@ -12,7 +12,6 @@ public class BuildingMain {
         //создаем экземпляр здания 1
         Building b1 = new Building("Здание 1");
 
-
         //создаем экземпляр комнатыпомещения 1
         Room r1 = new Room("room1", 33.7d, 3);
 
