@@ -29,7 +29,7 @@ public class Building {
 
             logger.info("Здание: " + getName() + " Комната " + room.getName() + " Освещенность " + room.calcCoommonBrightness() + " " + room.getWindows() + " окна" +
                     " по " + room.getLk() + " лк" + " Лампочки " + room.lamps + "\n" +
-                    "Площадь " + room.getRoomSquare() + " м^2 " + " Занято " + room.getFurnitureSquare() + " м^2 " + " свободно: " + room.unbusySpace() + " м^2 в процентах "
+                    "Площадь " + room.getRoomSquare() + " м^2 " + " Занято " + room.calcFurnitureSquare() + " м^2 " + " свободно: " + room.unbusySpace() + " м^2 в процентах "
                     + room.percentageUnbusySpace() + "%");
 
             //проверка наличия мебели в комнате

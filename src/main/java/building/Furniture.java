@@ -15,7 +15,7 @@ public class Furniture {
     //вывод класса мебель в читаемом виде
     @Override
     public String toString() {
-        return  name + " " + furnitureSquare + " м^2";
+        return name + " " + furnitureSquare + " м^2";
     }
 
     //получение переменной площадь экземпляра класса мебель

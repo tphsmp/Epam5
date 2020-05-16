@@ -15,7 +15,7 @@ public class Lighting {
     //представление данных класса в читаемом виде
     @Override
     public String toString() {
-        return  + brightness + " лк";
+        return +brightness + " лк";
     }
 
     //получение свойства brightness экземпляра класса Lighting

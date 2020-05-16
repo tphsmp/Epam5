@@ -30,13 +30,13 @@ public class Room {
     List<Lighting> lamps = new ArrayList<>();
 
     //метод добавления ламп в помещение и обработки исключения превышения освещенности
-    public int addLighting(Lighting lighting) throws IlluminanceTooMuchException {
+    public void addLighting(Lighting lighting) throws IlluminanceTooMuchException {
         if (calcCoommonBrightness() > 4000) {
             logger.error("Maximal brightness is exceeded");
             throw new IlluminanceTooMuchException("Maximal brightness is exceeded");
         } else {
             lamps.add(lighting);
-            return calcLampsBrigthness();
+            //return calcLampsBrigthness();
         }
     }
 
@@ -73,26 +73,27 @@ public class Room {
     List<Furniture> furnitures = new ArrayList<>();
 
     //метод добавления мебели в помещение и обработки исключения превышения занимаемой площади
-    private double furnitureSquare = 0;
-
     public void addFurniture(Furniture furniture) throws SpaceUsageTooMuchException {
-        furnitures.add(furniture);
-        furnitureSquare += furniture.getFurnitureSquare();
-
-        if ((furnitureSquare > roomSquare * 0.7)) {
+        if ((calcFurnitureSquare() > roomSquare * 0.7)) {
             logger.error("Furniture occupies more than 70% of room!");
             throw new SpaceUsageTooMuchException("Furniture occupies more than 70% of room!");
+        } else {
+            furnitures.add(furniture);
         }
     }
 
     //получем общую площадь мебели в помещении
-    public double getFurnitureSquare() {
-        return furnitureSquare;
+    public int calcFurnitureSquare() {
+        int furnitureSqr = 0;
+        for (Furniture furn : furnitures) {
+            furnitureSqr += furn.getFurnitureSquare();
+        }
+        return furnitureSqr;
     }
 
     //расчет свободной площади помещения
     public double unbusySpace() {
-        double freeSpace = new BigDecimal(roomSquare - furnitureSquare).setScale(1, RoundingMode.HALF_UP).doubleValue();
+        double freeSpace = new BigDecimal(roomSquare - calcFurnitureSquare()).setScale(1, RoundingMode.HALF_UP).doubleValue();
         return freeSpace;
     }
 

@@ -20,8 +20,8 @@ public class BuildingMain {
         b1.addRoom(r1);
 
         //добавляем освещение в помещение 1
-       r1.addLighting(new Lighting("lumen", 50));
-       r1.addLighting(new Lighting("lumen", 70));
+        r1.addLighting(new Lighting("lumen", 50));
+        r1.addLighting(new Lighting("lumen", 70));
 
         //добавлем экземпляр помещения 2
         Room r2 = new Room("room2", 24.5, 3);
