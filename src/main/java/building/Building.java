@@ -9,11 +9,11 @@ import java.util.List;
 
 public class Building {
 
-    //создаем логгер
-    Logger logger = LogManager.getLogger();
-
     //задаем свойства класса
     private String name;
+
+    //создаем логгер
+    Logger logger = LogManager.getLogger();
 
     //задаем название здания
     public Building(String name) {
